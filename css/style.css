@@ -63,7 +63,7 @@ header h1 {
 RELOGIO
 ###############################################*/
 #relogio {    
-    padding: 25px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +109,7 @@ DIA DA SEMANA
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 10px;
 }
 
 #dia-semana .container {
@@ -142,7 +142,7 @@ DATA
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 10px;
 }
 
 #data .container {
@@ -209,12 +209,11 @@ USO GERAL
     justify-content: center;
     align-items: center;
     height: 100%;
-    min-height: 210px;
+    min-height: 260px;
     font-weight: 100;
     border-radius: 0 0 25px 25px;
     box-shadow: 0px 5px 25px rgba(33, 33, 33, 0.17);
     padding: 15px;
-    
 }
 
 /* Tablet */
@@ -224,7 +223,7 @@ USO GERAL
      }
 
     .caixa-conteudo {
-        min-height: 150px;
+        min-height: 260px;
         padding: 15px; 
     }
 }
@@ -235,7 +234,7 @@ USO GERAL
     }
 
     .caixa-conteudo {
-        min-height: 70px;
+        min-height: 150px;
         padding: 10px;
     }
 }
