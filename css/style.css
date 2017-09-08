@@ -1,17 +1,61 @@
-html {
-    
+body {
+    height: 100vh;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;  
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        'aside principal';
+}
+
+@media screen and (max-width: 500px){
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            'principal';
+    }
+}
+
+/* ############################################
+NAVEGACAO/SIDEBAR
+###############################################*/
+aside {
+    background: #302d52;        
+    padding: 10px 0;
+}
+
+aside nav ul {
+    margin: 0;
+}
+aside nav ul li {
+    list-style: none;
+    margin-left: -32px;
+}
+aside nav ul li button {
+    color: #fff;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px){
+    aside{
+        display: none;
+    }
 }
 
 /* ############################################
 PRINCIPAL
 ###############################################*/
-body {
-    background: #0f0c29;
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
-    height: 100vh;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;  
+.grid-inicial {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 50px auto auto 30px;
@@ -23,7 +67,7 @@ body {
 }
 
 @media screen and (max-width: 500px){
-    body {
+    .grid-inicial {
         grid-template-rows: 50px repeat(3, auto) 37px;
         grid-template-areas:    
             'header header'
@@ -34,6 +78,54 @@ body {
     }
 }
 
+.grid-b {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px auto auto 30px;
+    grid-template-areas:
+        'header header'
+        'relogio dia-semana'
+        'relogio data'
+        'footer footer';
+}
+
+@media screen and (max-width: 700px){
+    .grid-b {
+        grid-template-rows: 50px repeat(3, auto) 37px;
+        grid-template-areas:    
+            'header header'
+            'relogio relogio'
+            'dia-semana dia-semana'
+            'data data'
+            'footer footer';
+    }
+}
+
+.grid-c {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px auto auto 30px;
+    grid-template-areas:
+        'header header'
+        'dia-semana data'
+        'relogio relogio'
+        'footer footer';
+}
+
+@media screen and (max-width: 500px){
+    .grid-c {
+        grid-template-rows: 50px repeat(3, auto) 37px;
+        grid-template-areas:    
+            'header header'
+            'relogio relogio'
+            'dia-semana dia-semana'
+            'data data'
+            'footer footer';
+    }
+}
+
+aside {grid-area: aside;}
+#principal {grid-area: principal;}
 header {grid-area: header;}
 #relogio {grid-area: relogio;}
 #dia-semana {grid-area: dia-semana;}
