@@ -1,24 +1,101 @@
+/* ############################################
+USO GERAL
+###############################################*/
+html {
+    
+}
+
 body {
     height: 100vh;
     color: #fff;
     font-family: 'Roboto', sans-serif;  
-    background: #0f0c29;
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
     display: grid;
     grid-template-columns: 50px 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 50px 1fr 5%;
     grid-template-areas: 
-        'aside principal';
+        'header header'
+        'aside principal'
+        'footer footer';
 }
 
 @media screen and (max-width: 500px){
     body {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-rows: 50px 1fr 35px;;
         grid-template-areas: 
-            'principal';
+        'header'
+        'principal'
+        'footer';
+    }
+}
+
+header      {grid-area: header;}
+aside       {grid-area: aside;}
+#principal  {grid-area: principal;}
+#relogio    {grid-area: relogio;}
+#dia-semana {grid-area: dia-semana;}
+#data       {grid-area: data;}
+footer      {grid-area: footer;}
+
+#principal {
+    padding: 15px;
+}
+
+.fundo-manha {
+    background-image: url(../img/fundo-manha-01.jpg);
+    background-size: cover;
+}
+
+.fundo-tarde {
+    background-image: url(../img/fundo-tarde-01.jpg);
+    background-size: cover;
+}
+
+.fundo-noite {
+    background-image: url(../img/fundo-noite-01.jpg);
+    background-size: cover;
+}
+
+.caixa-titulo {
+    font-weight: 100;
+    font-size: 25px;
+    margin: 0;
+    background-color: rgba(73, 73, 73, 0.5);
+    padding: 5px;
+    border-radius: 10px 10px 0 0;
+}
+
+.caixa-conteudo {
+    background: rgba(21, 21, 21, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 280px;
+    font-weight: 100;
+    border-radius: 0 0 25px 25px;
+}
+
+/* Tablet */
+@media screen and (max-width: 900px){
+    .caixa-titulo {
+        font-size: 21px;
+     }
+
+    .caixa-conteudo {
+        min-height: 250px;
+        padding: 15px; 
+    }
+}
+/* Mobile */
+@media screen and (max-width: 500px){
+    .caixa-titulo {
+        font-size: 15px;
+    }
+
+    .caixa-conteudo {
+        min-height: 150px;
     }
 }
 
@@ -26,7 +103,7 @@ body {
 NAVEGACAO/SIDEBAR
 ###############################################*/
 aside {
-    background: #302d52;        
+    background: rgba(58, 58, 58, 0.24);
     padding: 10px 0;
 }
 
@@ -58,91 +135,75 @@ PRINCIPAL
 .grid-inicial {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px auto auto 30px;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-        'header header'
         'relogio relogio'
-        'dia-semana data'
-        'footer footer';
+        'dia-semana data';
+    grid-gap: 15px;    
 }
 
 @media screen and (max-width: 500px){
-    .grid-inicial {
-        grid-template-rows: 50px repeat(3, auto) 37px;
-        grid-template-areas:    
-            'header header'
-            'relogio relogio'
-            'dia-semana dia-semana'
-            'data data'
-            'footer footer';
+    .grid-inicial, .grid-b, .grid-c {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            'relogio'
+            'dia-semana'
+            'data';  
     }
 }
 
 .grid-b {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px auto auto 30px;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-        'header header'
         'relogio dia-semana'
-        'relogio data'
-        'footer footer';
+        'relogio data';
+    grid-gap: 15px;    
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 750px){
     .grid-b {
-        grid-template-rows: 50px repeat(3, auto) 37px;
-        grid-template-areas:    
-            'header header'
-            'relogio relogio'
-            'dia-semana dia-semana'
-            'data data'
-            'footer footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            'relogio'
+            'dia-semana'
+            'data'; 
     }
 }
 
 .grid-c {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px auto auto 30px;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-        'header header'
-        'dia-semana data'
-        'relogio relogio'
-        'footer footer';
+        'data dia-semana'
+        'relogio relogio';
+    grid-gap: 15px;    
 }
 
 @media screen and (max-width: 500px){
     .grid-c {
-        grid-template-rows: 50px repeat(3, auto) 37px;
-        grid-template-areas:    
-            'header header'
-            'relogio relogio'
-            'dia-semana dia-semana'
-            'data data'
-            'footer footer';
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'data'
+            'dia-semana'
+            'relogio';  
     }
 }
-
-aside {grid-area: aside;}
-#principal {grid-area: principal;}
-header {grid-area: header;}
-#relogio {grid-area: relogio;}
-#dia-semana {grid-area: dia-semana;}
-#data {grid-area: data;}
-footer {grid-area: footer;}
 
 /* ############################################
 HEADER
 ###############################################*/
 header {
-    padding: 10px;
-    background: #2b5876;
-    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
-    background: linear-gradient(to right, #4e4376, #2b5876); 
-    text-align: center;
-    box-shadow: 0px 10px 25px rgba(33, 33, 33, 0.25);
-    border-bottom: 3px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(58, 58, 58, 0.24);
 }
 
 header h1 {
@@ -154,25 +215,27 @@ header h1 {
 /* ############################################
 RELOGIO
 ###############################################*/
-#relogio {    
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#relogio .container {
-    width: 100%;
+#relogio {
     
 }
 
-#relogio .container .horario {
+#relogio .container {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+#relogio .container .horario {
     text-align: center;
     font-size: 150px;
 }
 
-#relogio .horario .hora, #relogio .horario .minuto, #relogio .horario .segundo {
+#relogio .horario .hora, 
+#relogio .horario .minuto, 
+#relogio .horario .segundo {
     width: 100%;
     max-width: 250px;
 }
@@ -185,10 +248,6 @@ RELOGIO
 }
 /* Mobile */
 @media screen and (max-width: 500px){
-    #relogio {
-        padding: 7px;
-    }
-
     #relogio .container .horario {
         font-size: 39px;
     }
@@ -198,15 +257,16 @@ RELOGIO
 DIA DA SEMANA
 ###############################################*/
 #dia-semana {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
 }
 
 #dia-semana .container {
     font-size: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
+    height: 100%;
 }
 
 /* Tablet */
@@ -215,13 +275,8 @@ DIA DA SEMANA
         font-size: 50px;
     }
 }
-
 /* Mobile */
 @media screen and (max-width: 500px){
-    #dia-semana {
-        padding: 7px;
-    }
-
     #dia-semana .container {
         font-size: 30px;
     }
@@ -231,14 +286,15 @@ DIA DA SEMANA
 DATA
 ###############################################*/
 #data {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
 }
 
 #data .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
+    height: 100%;
 }
 
 #data .container .caixa-data {
@@ -253,80 +309,23 @@ DATA
 }
 /* Mobile */
 @media screen and (max-width: 500px){
-    #data {
-        padding: 7px;
-    }
-
     #data .container .caixa-data {
         font-size: 17px;
     }
 }
 
-
 /* ############################################
 FOOTER
 ###############################################*/
 footer {
-    padding: 7px;
-    background: #0f0c29;
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);    
+    background: rgba(58, 58, 58, 0.24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer .container p {
     font-size: 12px;
     font-weight: 100;
-    text-align: center;
     margin: 0;
-}
-
-
-/* ############################################
-USO GERAL
-###############################################*/
-.caixa-titulo {
-    font-weight: 100;
-    font-size: 25px;
-    margin: 0;
-    background-color: rgba(131, 131, 131, 0.07);
-    padding: 5px 10px;
-    border-radius: 10px 10px 0 0;
-}
-
-.caixa-conteudo {
-    background: #2b5876;
-    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
-    background: linear-gradient(to right, #4e4376, #2b5876); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    min-height: 260px;
-    font-weight: 100;
-    border-radius: 0 0 25px 25px;
-    box-shadow: 0px 5px 25px rgba(33, 33, 33, 0.17);
-    padding: 15px;
-}
-
-/* Tablet */
-@media screen and (max-width: 900px){
-    .caixa-titulo {
-        font-size: 21px;
-     }
-
-    .caixa-conteudo {
-        min-height: 260px;
-        padding: 15px; 
-    }
-}
-/* Mobile */
-@media screen and (max-width: 500px){
-    .caixa-titulo {
-        font-size: 15px;
-    }
-
-    .caixa-conteudo {
-        min-height: 150px;
-        padding: 10px;
-    }
 }
