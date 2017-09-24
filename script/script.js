@@ -80,7 +80,7 @@ function confereMes(n) {
 // TROCA FUNDO CONFORME HORA DO DIA
 
 function trocaFundoConformeHora() {
-    let horaAtual = parseInt($(".hora").innerText);
+    let horaAtual = 6;
 
     if (horaAtual >= 0 && horaAtual < 6) {
         $("body").classList.add("fundo-noite");

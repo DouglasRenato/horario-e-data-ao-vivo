@@ -43,18 +43,21 @@ footer      {grid-area: footer;}
 }
 
 .fundo-manha {
-    background-image: url(../img/fundo-manha-01.jpg);
+    background: url(../img/fundo-manha-01.jpg) center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .fundo-tarde {
-    background-image: url(../img/fundo-tarde-01.jpg);
+    background: url(../img/fundo-tarde-01.jpg) center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .fundo-noite {
-    background-image: url(../img/fundo-noite-01.jpg);
+    background: url(../img/fundo-noite-01.jpg) center center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .caixa-titulo {
@@ -62,7 +65,7 @@ footer      {grid-area: footer;}
     font-size: 25px;
     margin: 0;
     background-color: rgba(73, 73, 73, 0.5);
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 10px 10px 0 0;
 }
 
