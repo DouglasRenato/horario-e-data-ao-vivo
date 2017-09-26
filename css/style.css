@@ -50,7 +50,7 @@ footer      {grid-area: footer;}
 
 .fundo-tarde {
     background: url(../img/fundo-tarde-01.jpg) center center;
-    background-size: cover;
+    
     background-attachment: fixed;
 }
 
