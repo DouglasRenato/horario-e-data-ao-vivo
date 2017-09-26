@@ -43,21 +43,18 @@ footer      {grid-area: footer;}
 }
 
 .fundo-manha {
-    background: url(../img/fundo-manha-01.jpg) center center;
-    background-size: cover;
+    background: url(../img/fundo-manha-02.jpg) center center;
     background-attachment: fixed;
 }
 
 .fundo-tarde {
-    background: url(../img/fundo-tarde-01.jpg) center center;
-    
+    background: url(../img/fundo-tarde-02.jpg) center center;
     background-attachment: fixed;
 }
 
 .fundo-noite {
-    background: url(../img/fundo-noite-01.jpg) center center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url(../img/fundo-noite-02.jpg) center center;
+    background-attachment: fixed; 
 }
 
 .caixa-titulo {

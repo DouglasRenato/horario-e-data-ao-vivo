@@ -83,12 +83,16 @@ function trocaFundoConformeHora() {
     let horaAtual = parseInt($(".hora").innerText);
 
     if (horaAtual >= 0 && horaAtual < 6) {
+        $("header h1").innerHTML = 'Bom dia!'
         $("body").classList.add("fundo-noite");
     } else if (horaAtual >= 6 && horaAtual < 12) {
+        $("header h1").innerHTML = 'Bom dia!'
         $("body").classList.add("fundo-manha");
     } else if (horaAtual >= 12 && horaAtual < 18) {
+        $("header h1").innerHTML = 'Boa Tarde!'
         $("body").classList.add("fundo-tarde");
     } else if (horaAtual >= 18) {
+        $("header h1").innerHTML = 'Boa noite!'
         $("body").classList.add("fundo-noite");
     }
 
